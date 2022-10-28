@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Converter</title>
+    <link rel="stylesheet" href="css/materialize.css">
+    <style>
+        *{
+            margin: auto;
+            padding: 15px;
+        }
+        .ro{
+            align-items: center;
+            justify-content: center;
+            align-content: center !important;
+            text-align: center;
+            color: white;
+            font-weight: 400;
+            font-size: 15px;
+        }
+        .pi{
+            font-size: 45px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: 600 !important;
+            border: 5px solid #D2D2D2 !important;
+            border-radius: 25px;
+            background: white;
+            
+        }
+        #HAge{
+            align-items: center;
+            text-align: center;
+            color: black;
+            background-color: white;
+            border-radius: 20px;
+        }
+        .crab{
+           background: #292929;
+           border-radius: 26px;
+        }
+        .Tochook{
+text-align: center !important;
+align-items: center;
+align-content: center;
+        }
+        body{
+            background: #000;
+        }
+        #button{
+             border-radius: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="crab">
+            <div class="card-panel center-align pi">Age Converter</div>
+            <input class="white black-text" type="text" name="" id="HAge" placeholder="Enter Human Age">
+            <div class="ro">
+                
+                <div class="row">
+                <div class="col s12 m6">
+                    <div class="card-panel blue"><h5>Dog Years</h5><div id="aja"></div></div>
+                    </div>
+    
+                    <div class="col s12 m6">
+                        <div class="card-panel green" ><h5>Cat Years</h5><div id="cat"></div></div class="Tochook"></div>
+    
+                        
+                            <div class="col s12 m6">
+                                <div class="card-panel teal" ><h5>Horse Years</h5><div id="horse"></div></div></div>
+                                
+        
+                                <div class="col s12 m6 ">
+                                    <div class="card-panel red" ><h5>Rabbit Years</h5>
+                                   <div id="rabbit"></div></div>
+                                </div>
+                        </div>
+                            
+    
+                        
+                        <input type="button" value="Reset Input" id="button" onclick="clr()" class="black white-text">
+                </div>
+
+        </div>
+        
+        
+    </div>
+
+    <script src="js/materialize.js"></script>
+    <script>
+        const HAge = document.querySelector('#HAge');
+        HAge.addEventListener('input', function(p){
+            let age = p.target.value;
+            document.querySelector('#aja').innerHTML = age*7+' Years Old';
+            document.querySelector('#cat').innerHTML = age*5.2+' Years Old';
+            document.querySelector('#horse').innerHTML = age*6+' Years Old';
+            document.querySelector('#rabbit').innerHTML = age*7+' Years Old';
+        } );
+        function clr(){
+document.getElementById('HAge').value ='';
+document.getElementById('cat').innerHTML = null;
+document.getElementById('horse').innerHTML = null;
+document.getElementById('rabbit').innerHTML = null;
+document.getElementById('aja').innerHTML = null; /*using '' instead of null will work as well*/
+        }
+
+    </script>
+    <!---tHIS CWORK IS AVAILABLE ON https://codepen.io/OlabodeFolorunso/pen/YzEPPrw-->
+</body>
+</html>
